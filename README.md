@@ -1,5 +1,9 @@
 # DYCP Machine Learning Scripts 
-Developed for the dance film I'm making for my Develop Your Creative Practice grant project Points Of Origin. A collection of ml tools/scripts for extracting information about dancers and chaining the inputs and outputs of these processes together. For eventual use in Blender, openframeworks and Unreal Engine.
+
+Developed for the dance film I'm making for my Develop Your Creative Practice grant project Points Of Origin. 
+
+A collection of ml tools/scripts for extracting information about dancers and chaining the inputs and outputs of these processes together. For eventual use in Blender, openframeworks and Unreal Engine.
+
 
 ## Performer Matting
 Switchlight generally does a good job of this for one person but gets a little confused when there are other objects in the scene behind the performer or if there is multiple people in a scene, which is bad for me if I have multiple performers.
@@ -12,26 +16,38 @@ But otherwise theres
 https://github.com/PeterL1n/BackgroundMattingV2
 https://github.com/ZHKKKe/MODNet
 
+
 ## Depth Estimation
 There are several depth estimation models that could be used, I'm not sure which is best at the moment but here are a few options:
 
 DepthAnything
+
 LeRes (maybe not temporally consistent)
+
 Davinci (but not very high quality)
+
 Midas (not very high quality)
+
 Marigold
+
 Sapiens
+
 Depth Pro
+
 Adelaidepth
 
+
 Ideally we want something metric so we can project the points into a scene and create a 3d surface.
-Switchlight gives us a depth map as an exr file with values above the range a monitor can produce. 
+Switchlight gives us a depth map as an exr file with values above the range a monitor can produce.
+ 
 For one of the rehearsal clips with Laura it gave us a range of values from:
  427.65 to 568.6875 with 0 for areas where the alpha channel is 0.
 this could be maybe centimeters (ie. 4.27 meters to 5.68 meters away from camera is plausible)
 
+
 In any case, it would be useful to have a scale factor and an offset so we can tweak it for specific frames and animate over time in Unreal/Blender.
 Displacing a plane to give the illusion of 3d depth is straightforward but isn't what we really want. What we REALLY want is to project rays out from the camera according to the FOV and aspect ratio of the image.
+
 
 ## Normal Estimation
 
@@ -39,12 +55,17 @@ Switchlight does a great job of this, assuming its background removal has worked
 
 Normality is wonderful (and free!) in After Effects for working with these normal maps, specifically for relighting with positioned lights, rim lighting, refraction and refraction, matcaps.
 
+
 ## Pose estimation
 
 Sapiens
+
 Rokoko video
+
 posenet
+
 mediapipe
+
 openpose
 
 ## 3d model estimation
