@@ -14,6 +14,7 @@ https://peterl1n.github.io/RobustVideoMatting/
 
 But otherwise theres
 https://github.com/PeterL1n/BackgroundMattingV2
+and
 https://github.com/ZHKKKe/MODNet
 
 
@@ -48,6 +49,16 @@ this could be maybe centimeters (ie. 4.27 meters to 5.68 meters away from camera
 In any case, it would be useful to have a scale factor and an offset so we can tweak it for specific frames and animate over time in Unreal/Blender.
 Displacing a plane to give the illusion of 3d depth is straightforward but isn't what we really want. What we REALLY want is to project rays out from the camera according to the FOV and aspect ratio of the image.
 
+## Segmentation
+
+Sapiens does a good job of this but annoyingly the pytorch sapiens inference installed from pip only works well for images that are at a size of 1024h x 768w which is a portrait format, clearly not ideal for landscape filmmaking. 
+It does not work well for images where the body has been cropped off.
+
+The gradio app seems to do a much better job of this bizarrely so I need to investigate.
+
+https://github.com/ibaiGorordo/Sapiens-Pytorch-Inference
+
+https://huggingface.co/spaces/facebook/sapiens-seg
 
 ## Normal Estimation
 
