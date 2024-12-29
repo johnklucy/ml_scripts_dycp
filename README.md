@@ -4,6 +4,9 @@ Developed for the dance film I'm making for my Develop Your Creative Practice gr
 
 A collection of ml tools/scripts for extracting information about dancers and chaining the inputs and outputs of these processes together. For eventual use in Blender, openframeworks, Unreal Engine, After Effects and Davinci Resolve.
 
+Eventually I want to use the depth map to make something like this
+https://www.youtube.com/watch?v=etSfYfIIoSE
+
 ## Deployment
 We can chain these together by making a batch script that calls everything in sequence. 
 For this, we can use a watchdog script which triggers this all when a video file or series of files is moved into a folder and pulls the correct locations for the files from a yaml file so it is easy to update if I move anything.
