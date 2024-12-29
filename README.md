@@ -2,7 +2,14 @@
 
 Developed for the dance film I'm making for my Develop Your Creative Practice grant project Points Of Origin. 
 
-A collection of ml tools/scripts for extracting information about dancers and chaining the inputs and outputs of these processes together. For eventual use in Blender, openframeworks and Unreal Engine.
+A collection of ml tools/scripts for extracting information about dancers and chaining the inputs and outputs of these processes together. For eventual use in Blender, openframeworks, Unreal Engine, After Effects and Davinci Resolve.
+
+## Deployment
+We can chain these together by making a batch script that calls everything in sequence. 
+For this, we can use a watchdog script which triggers this all when a video file or series of files is moved into a folder and pulls the correct locations for the files from a yaml file so it is easy to update if I move anything.
+For monitoring the completion of switchlight inference, we can use ffmpeg to work out the number of frames in the file and check against the number of files in all the folders. In the case that there is an error here somehow eg. if the number of frames doesn't match up for some reason, we can set a timeout before automatically moving onto the next stage.
+
+In some instances, switchlight may not output for every frame. To address this, we can check for gaps in the sequence once inference is completed and run the inference for just those frames. There is a CLI for switchlight but it is paid so I'm not using it at the moment so it is a manual process at the moment to run switchlight on a folder which contains just the frames that we are missing.
 
 
 ## Performer Matting
