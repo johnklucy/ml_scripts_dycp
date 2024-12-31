@@ -31,7 +31,8 @@ https://github.com/ZHKKKe/MODNet
 ## Depth Estimation
 There are several depth estimation models that could be used, I'm not sure which is best at the moment but here are a few options:
 
-DepthAnything
+DepthAnything v2
+https://promptda.github.io/
 
 LeRes (maybe not temporally consistent)
 
@@ -43,7 +44,9 @@ Marigold
 
 Sapiens
 
-Depth Pro
+Depth Pro (can't get working right now, but gives us a metric depth and focal length estimation)
+
+DepthCrafter
 
 Adelaidepth
 
